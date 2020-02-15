@@ -5,6 +5,7 @@ import json
 
 US_ADULT_POPULATION_2017=251564106
 RCP_SCALE = 1000
+WEEKS_PER_YEAR=52
 customerId = '5e47858a322fa016762f38ec'
 apiKey = 'e505195e938067f8af2c632e14b59140'
 fpath = '../data/ECNBASIC2017.EC1744BASIC_data_with_overlays_2020-02-15T140430.csv'
@@ -56,7 +57,7 @@ with open(fpath, 'r') as f:
     census_labels = {}
     for index, row in df[['NAICS2017','NAICS2017_LABEL','RCPTOT']][2:].iterrows():
         if row['NAICS2017_LABEL'] not in census_labels:
-            census_labels[row['NAICS2017_LABEL']]=float(row['RCPTOT'])*RCP_SCALE/US_ADULT_POPULATION_2017
+            census_labels[row['NAICS2017_LABEL']]=float(row['RCPTOT'])*RCP_SCALE/US_ADULT_POPULATION_2017/WEEKS_PER_YEAR
     #for entry in df[2:]:
         #print(entry)
         # if entry['NAICS2017_LABEL'] not in census_labels:
