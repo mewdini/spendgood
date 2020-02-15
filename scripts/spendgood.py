@@ -11,4 +11,8 @@ with open(sys.argv[2]) as f:
     # print(float(rowData[1][1:]))
     # print(float(saved)/float(rowData[1][1:]))
     # print('With the ${} you saved, you could have bought {} {}!'.format(saved,round((float(saved)/float(rowData[1][1:])),2),rowData['ITEM']))
-    print('With the ${} you saved, you could have bought {} {}!'.format(saved,int((float(saved)/float(rowData[1][1:]))),rowData['ITEM']))
+    nearest_int = int((float(saved)/float(rowData[1][1:])))
+    if(nearest_int==1):
+        print('With the ${} you saved, you could have bought {} {}!'.format(saved,nearest_int,rowData['SINGULAR']))
+    else:
+        print('With the ${} you saved, you could have bought {} {}!'.format(saved,nearest_int,rowData['ITEM']))
