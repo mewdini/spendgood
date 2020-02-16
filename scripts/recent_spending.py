@@ -8,7 +8,7 @@ user_account = "5e481a2cf1bac107157e0abd"
 key = "cb456762a68ec02541768d65d2cfa5e3"
 
 # get purchases
-def top_spending():
+def recent_spending():
     url = 'http://api.reimaginebanking.com/accounts/{}/purchases?key={}'.format(user_account, key)
     purchases = requests.get(url)
     purchases_data = purchases.json()
@@ -21,7 +21,7 @@ def top_spending():
                 purchase_date = date(int(purchase_date_list[0]),int(purchase_date_list[1]),int(purchase_date_list[2]))
 
             merchant_id = purchase["merchant_id"]
-            url = 'http://api.reimaginebanking.com/merchants/{}?key=cb456762a68ec02541768d65d2cfa5e3'.format(merchant_id)
+            url = 'http://api.reimaginebanking.com/merchants/{}?key={}'.format(merchant_id,key)
             merchant = requests.get(url) #get category
             merchant_data = merchant.json()
             for category in merchant_data["category"]:
@@ -51,6 +51,6 @@ def top_spending():
     totals_month = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1][2], reverse=True)}
     return [totals_week, totals_month]
 if __name__ == "__main__":
-    spend_totals = top_spending()
+    spend_totals = recent_spending()
     print(spend_totals[0])
     print(spend_totals[1])
