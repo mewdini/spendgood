@@ -12,5 +12,6 @@ This web application is built to assist users to evaluate and visualize their sp
 * html
 * css
 * nessie api
+* microstrategies embedded analytics
 
 
