@@ -8,7 +8,7 @@ user_account = "5e481a2cf1bac107157e0abd"
 key = "cb456762a68ec02541768d65d2cfa5e3"
 
 # get purchases
-def recent_spending():
+def get_totals():
     url = 'http://api.reimaginebanking.com/accounts/{}/purchases?key={}'.format(user_account, key)
     purchases = requests.get(url)
     purchases_data = purchases.json()
@@ -47,9 +47,9 @@ def recent_spending():
                 if purchase_date < totals[category][4]:
                     totals[category][4] = purchase_date
                 
-    totals_week = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1][0], reverse=True)}
     totals_month = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1][2], reverse=True)}
-    return [totals_week, totals_month]
+    totals_week = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1][0], reverse=True)}
+    return [totals_month, totals_week]
 if __name__ == "__main__":
     spend_totals = recent_spending()
     print(spend_totals[0])

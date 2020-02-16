@@ -25,4 +25,8 @@ def top_spending():
                 else:
                     totals[category] = float(purchase["amount"])
     totals = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1], reverse=True)}
+    
     return totals
+if __name__ == "__main__":
+    spend_totals = top_spending()
+    print(spend_totals)
