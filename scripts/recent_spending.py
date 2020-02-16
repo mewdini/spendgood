@@ -48,9 +48,7 @@ def get_totals():
                     totals[category][4] = purchase_date
                 
     totals_month = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1][2], reverse=True)}
+    totals_month = {k: [v[2],v[3],v[4]] for k,v in totals_month.items()}
     totals_week = {k: v for k, v in sorted(totals.items(), key=lambda item: item[1][0], reverse=True)}
+    totals_week = {k: [v[1],v[2],v[4]] for k,v in totals_week.items()}
     return [totals_month, totals_week]
-if __name__ == "__main__":
-    spend_totals = recent_spending()
-    print(spend_totals[0])
-    print(spend_totals[1])
