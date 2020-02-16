@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Spend Good</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="static/css/style.css">
+<link rel="icon" href="static/logo.png" type="image/icon type">
+<style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    nav{
+  height: auto;
+  padding: 1em;
+    }
+    #nav1{
+      background-color: black;
+
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+        ul.b {
+    list-style-type: square;
+    }
+        * {
+    box-sizing: border-box;
+    }
+    .row {
+    display: flex;
+    }
+    .column {
+    flex: 25%;
+    padding: 70px;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+  <a href= "https://github.com/pasolano/vthacks7">
+  <img style= "id=banner" src="static/banner.png"></img>
+  </a>
+</div>
+
+<nav id="nav1">
+    <ul>
+      <li style= "margin-left: 42%;"><a href="#About">About</a></li>
+      <li><a href="#creators">Creators</a></li>
+    </ul>
+  </nav>
+<nav>
+    <ul>
+      <div style= "width:100%;left-margin:20%;padding-left:40%" id= "form-submission">
+        <form style= "color:white" action="/check-id/" method="post">
+          Username:
+          <input style="margin-left: 2px" type="text" name="username"></input>
+          <br>
+          Password:
+          <input style="margin-left: 5px" type="password" name="password"></input>
+          <br>
+          <input style="margin-left: 13%" type="submit" value="Login"></input>
+        </form>
+      </div>
+    </ul>
+</nav>
+<div id='About'><a name='About'></a></div>
+<p style="margin-top: 70px;"> </p>
+<center><font face=Calligraphy size = 7  color= #1abc9c>Welcome to Spend Good!</font></center>
+<img style= "padding: 0 15px; float: left;" id="logo" src="static/logo.png"></img>
+<p style="margin-top: 100px;"> </p>
+<font face=Calligraphy size = 5> Say hello to your new personal spending assistant! Log in above to become a better spender.</font>
+<p><font face=Calligraphy size = 5> We are here to: </font></p>
+        <p><font face=Calligraphy size = 3>1. Assess your spending patterns</p></font>
+        <p><font face=Calligraphy size = 3>2. Recommend personalized savings plans that fit your needs</p></font>
+        <p><font face=Calligraphy size = 3>3. Visualize your spending patterns</p></font>
+</ul>
+<p style="margin-top: 200px;"> </p>
+<center><font face=Calligraphy size = 7 color= #1abc9c >Meet the Creators</font></center>
+<div id='creators'><a name='creators'></a></div>
+<div class="row">
+    <div class="column">
+      <img src="static/Fantine.jpg"style="width:100%" alt="Alex Fantine" height=300> <font face= Calligraphy>  Alex Fantine: Junior at William and Mary studying Computer Science and Linguistics. </font>
+    </div>
+    <div class="column">
+      <img src="static/feng.jpg" style="width:100%" alt = "Alex Feng" height=300><font face= Calligraphy>   Alex Feng: Junior at William and Mary studying Computer Science and Math. </font>
+    </div>
+    <div class="column">
+      <img src="static/Saloni.png" style="width:100%" alt = "Saloni Kapila" height=300> <font face= Calligraphy>  Saloni Kapila: Junior at William and Mary studying Computer Science and Computational Applied Math and Stats.  </font>
+    </div>
+    <div class="column">
+        <img src="static/pablo.jpg" style="width:100%" alt = "Pablo Solano"height=300 > <font face= Calligraphy>  Pablo Solano: Sophomore at William and Mary studying Computer Science.  </font>
+      </div>
+  </div>
+</body>
+</html>
