@@ -1,5 +1,6 @@
 import recent_spending
 import argparse
+import datetime
 from datetime import date
 import funfacts
 
@@ -45,7 +46,7 @@ for k,v in totals.items():
 percent_increases = {k: v for k, v in sorted(percent_increases.items(), key=lambda item: item[1], reverse=True)}
 #print(percent_increases)
 counter = 0
-top=[]
+top = False
 for k, v in percent_increases.items():
     if(counter>=NUM_SUGGESTIONS):
         break
@@ -62,10 +63,14 @@ for k, v in percent_increases.items():
     if(counter == 0):
         top = [k,v]
     counter+=1
-recommended_percent_decrease=100*top[1]/2/(100+top[1])
-savings = totals[top[0]][0]*(recommended_percent_decrease)/100
-print("If you reduce your spending on {} by {:.2f}%, you could save ${:.2f} each {}{}".format(top[0],recommended_percent_decrease,savings,period,terminal))
-funfacts.have_fun(savings, ITEM_CSV_PATH)
-implement = input("Would you like to implement this into your plan?\n")
-if(implement):
-    print("Budget for {} next {}: ${:.2f}".format(top[0],period,totals[top[0]][0]*(100-recommended_percent_decrease)/100))
+if(top):
+    if(top[1]<float('infty')):
+        recommended_percent_decrease=100*top[1]/2/(100+top[1])
+    else:
+        recommended_percent_decrease=50
+    savings = totals[top[0]][0]*(recommended_percent_decrease)/100
+    print("If you reduce your spending on {} by {:.2f}%, you could save ${:.2f} each {}{}".format(top[0],recommended_percent_decrease,savings,period,terminal))
+    funfacts.have_fun(savings, ITEM_CSV_PATH)
+    implement = input("Would you like to implement this into your plan?\n")
+    if(implement):
+        print("Budget for {} next {} ({} to {}): ${:.2f}".format(today.ToString(),(today+datetime.timedelta(days=offset)).ToString(),top[0],period,totals[top[0]][0]*(100-recommended_percent_decrease)/100))
