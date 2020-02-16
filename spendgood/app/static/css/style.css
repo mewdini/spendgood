@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  /* Style the header */
+  .header {
+    padding: 80px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+  }
+  
+  /* Increase the font size of the h1 element */
+  .header h1 {
+    font-size: 80px;
+    font-family: coronet;
+  }
+  
+  /* Style the top navigation bar */
+  nav{
+      width:100%;
+      background:black;
+      overflow:auto;
+  }
+
+  ul{
+      padding:o;
+      margin:0 0 0 150px;
+      list-style:none;
+  }
+
+  li{
+      float:left;
+
+  }
+
+  nav a{
+      width:100px;
+      display:block;
+      padding:20px 15px;
+      text-decoration:none;
+      font-family:Arial;
+      color:#f2f2f2;
+      text-align:center;
+  }
+
+
+  nav ul li a:hover {
+    color: #555;
+  }
