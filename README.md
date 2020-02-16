@@ -11,5 +11,6 @@ This web application is built to assist users evaluate and visualize their spend
 * firebase
 * html
 * css
+* nessie api
 
 
