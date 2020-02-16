@@ -12,6 +12,7 @@ def get_totals():
     url = 'http://api.reimaginebanking.com/accounts/{}/purchases?key={}'.format(user_account, key)
     purchases = requests.get(url)
     purchases_data = purchases.json()
+    print(purchases_data)
     today = date.today()
     totals = {} #totals[category] = [this_week, before_this_week, this_month, before_this_month, first_purchase_date]
     for purchase in purchases_data:
