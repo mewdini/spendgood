@@ -1,4 +1,4 @@
-# SpendGood
+# Spend Good
 ## Problem: overspending is common and money is a relative thing. How can we help improve people’s spending and saving habits using technology?
 - A web app that has user spending information stored on it (firebase?)
 Users can see visualize their spending habits (microstrategy? Not very novel)
