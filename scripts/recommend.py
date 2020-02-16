@@ -27,7 +27,7 @@ if args.weekly:
     period = 'week'
     offset = DAYS_IN_WEEK
 #totals: {category:[total_in_period,total_before_period, first_purchase_date]}
-API_to_census = {'furniture_store':'Furniture stores','lodging':'Home centers','tech':'Electronics and appliance stores','book_store':'Book stores','string':'Confectionery and nut stores','wholesale':'Warehouse clubs and supercenters','specialty':"All other specialty food stores",'groceries':'Grocery stores','food':'Food and beverage stores'}
+API_to_census = {'furniture_store':'Furniture stores','Lodging':'Home centers','tech':'Electronics and appliance stores','book_store':'Book stores','string':'Confectionery and nut stores','wholesale':'Warehouse clubs and supercenters','specialty':"All other specialty food stores",'groceries':'Grocery stores','food':'Food and beverage stores'}
 yearly_sales = get_yearly.get_yearly()
 today = date.today()
 percent_increases={}
@@ -63,7 +63,7 @@ for k, v in percent_increases.items():
     else:
         #print("You've spent {:.2f}% more than your average on {} this {}{}".format(v,k,period,terminal))
         print("You've spent ${:.2f} on {} this {}. That's {:.2f}% more than your average{}".format(totals[k][0],k,period,v,terminal))
-        print("The average American adult spent {} on {} each {} in 2017.".format(yearly_sales[API_to_census[k]]/divide_by,k,period))
+        print("The average American adult spent ${:.2f} on {} each {} in 2017.".format(yearly_sales[API_to_census[k]]/divide_by,k,period))
     if(counter == 0):
         top = [k,v]
     counter+=1
