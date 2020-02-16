@@ -64,7 +64,7 @@ for k, v in percent_increases.items():
         top = [k,v]
     counter+=1
 if(top):
-    if(top[1]<float('infty')):
+    if(top[1]<float('inf')):
         recommended_percent_decrease=100*top[1]/2/(100+top[1])
     else:
         recommended_percent_decrease=50
@@ -73,4 +73,4 @@ if(top):
     funfacts.have_fun(savings, ITEM_CSV_PATH)
     implement = input("Would you like to implement this into your plan?\n")
     if(implement):
-        print("Budget for {} next {} ({} to {}): ${:.2f}".format(today.ToString(),(today+datetime.timedelta(days=offset)).ToString(),top[0],period,totals[top[0]][0]*(100-recommended_percent_decrease)/100))
+        print("Budget for {} next {} ({} to {}): ${:.2f}".format(top[0],period,(today+datetime.timedelta(days=1)).strftime("%m/%d/%Y"),(today+datetime.timedelta(days=offset+1)).strftime("%m/%d/%Y"),totals[top[0]][0]*(100-recommended_percent_decrease)/100))
