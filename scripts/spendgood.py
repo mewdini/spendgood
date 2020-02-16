@@ -1,6 +1,7 @@
 import sys
 import random
 import pandas as pd
+#USAGE: python spendgood.py SAVINGS FILEPATH
 with open(sys.argv[2]) as f:
     df = pd.read_csv(f)
     saved = sys.argv[1]
