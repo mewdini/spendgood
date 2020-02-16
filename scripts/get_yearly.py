@@ -1,9 +1,10 @@
 #/usr/bin/python3
 
-import pandas
+import pandas as pd
 
 fpath = '../data/ECNBASIC2017.EC1744BASIC_data_with_overlays_2020-02-15T140430.csv'
-
+US_ADULT_POPULATION_2017=251564106
+RCP_SCALE = 1000
 def get_yearly(category):
     with open(fpath, 'r') as f:
         df = pd.read_csv(f)
