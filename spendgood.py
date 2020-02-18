@@ -148,7 +148,7 @@ def get_recommend():
     DAYS_IN_WEEK=7
     DAYS_IN_MONTH=30
     NUM_SUGGESTIONS=3
-    ITEM_CSV_FILE='./items.csv'
+    ITEM_CSV_FILE='./data/items.csv'
     weekly = True #change this to true or have it change by user selection
     #parser = argparse.ArgumentParser(description='Recommend how to lower spending')
     #parser.add_argument('--weekly', type=bool, default=False,
@@ -272,7 +272,7 @@ def is_plan():
 
 
 def get_yearly():
-    file_name = 'ECNBASIC2017.EC1744BASIC_data_with_overlays_2020-02-15T140430.csv'
+    file_name = './data/ECNBASIC2017.EC1744BASIC_data_with_overlays_2020-02-15T140430.csv'
     US_ADULT_POPULATION_2017=251564106
     RCP_SCALE = 1000
     #with open(fpath, 'r') as f:
